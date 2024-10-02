@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using fullCalandar.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace fullCalandar.Context
 {
@@ -8,6 +10,8 @@ namespace fullCalandar.Context
         {
 
         }
+
+        public DbSet<CalendarInfo> CalandarInfos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
