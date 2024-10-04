@@ -1,4 +1,5 @@
 using fullCalandar.Context;
+using fullCalandar.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +13,15 @@ builder.Services.AddDbContext<MyContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection"));
 });
 
+
+#region IOCs
+
+builder.Services.AddScoped<IAdminService,IAdminService>();
+
 #endregion
+#endregion
+
+
 
 
 var app = builder.Build();
